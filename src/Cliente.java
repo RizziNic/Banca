@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Cliente{
 
     String nome;
@@ -5,6 +7,9 @@ public class Cliente{
     String codiceFiscale;
     String codiceBancario;
     float denaro;
+
+    ArrayList<String> movimenti = new ArrayList<>();
+
     public Cliente(String nome, String cognome, String codiceFiscale, String codiceBancario, float denaro){
         this.nome = nome;
         this.cognome = cognome;

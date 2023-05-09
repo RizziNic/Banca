@@ -42,7 +42,9 @@ public class Main {
 
         }
         catch (Exception e){
-            System.out.println(e);
+            //System.out.println(e);
+            System.out.println("Non ci sono più clienti");
+            System.exit(0);
         }
 
 
