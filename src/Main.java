@@ -33,8 +33,20 @@ public class Main {
                         break;
                     case 3:
                         System.out.println("Chi invia il denaro");
-                        String mandante = tastiera.nextLine();
+                        System.out.println(banca.listaClienti);
 
+                        int posmandante = tastiera.nextInt(); //posizione del mandante
+
+                        String mandante = banca.listaClienti.get(posmandante).codiceBancario; //codice bancario del mandante
+                        banca.listaClienti.get(posmandante).inviaDenaro(mandante); //chiamata del metodo inviaDenaro()
+
+                        System.out.println("A chi si invia il denaro");
+                        String ricevitore = tastiera.nextLine(); //codice bancario del ricevitore
+                        int posricevitore = tastiera.nextInt(); //posizione del ricevitore
+
+                        banca.listaClienti.get(posricevitore).riceviDenaro(banca.listaClienti.get(posmandante).inviaDenaro(mandante), ricevitore); //chiamata del metodo riceviDenaro()
+
+                        break;
 
                     case 5:
                         System.exit(0);
@@ -47,7 +59,7 @@ public class Main {
 
         }
         catch (Exception e){
-            //System.out.println(e);
+            System.out.println(e);
             System.out.println("Non ci sono più clienti");
             System.exit(0);
         }

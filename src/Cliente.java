@@ -9,7 +9,7 @@ public class Cliente{
     String codiceBancario;
     float denaro;
 
-    ArrayList<String> movimenti = new ArrayList<>();
+    ArrayList<Movimento> movimenti = new ArrayList<>();
 
     public Cliente(String nome, String cognome, String codiceFiscale, String codiceBancario, float denaro){
         this.nome = nome;
@@ -25,14 +25,20 @@ public class Cliente{
     }
 
     public float inviaDenaro(String mandante){
-        Scanner input = new Scanner(System.in);
-        float invio = input.nextFloat();
-        denaro = denaro - invio;
+        float invio = 0;
+        if(mandante.equals(this.codiceBancario)){
+            boolean possibilitaInvio = true;
+            Scanner input = new Scanner(System.in);
+            System.out.println("Invio");
+            invio = input.nextFloat();
+            this.denaro = denaro - invio;
+        }
         return invio;
+
     }
 
-    public void riceviDenaro(float invio){
-        denaro = denaro + invio;
+    public void riceviDenaro(float invio, String ricevitore){
+        this.denaro = denaro + invio;
     }
 
 
