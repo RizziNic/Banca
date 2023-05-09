@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Cliente{
 
@@ -22,4 +23,18 @@ public class Cliente{
     public String toString() {
         return nome + " " + cognome;
     }
+
+    public float inviaDenaro(String mandante){
+        Scanner input = new Scanner(System.in);
+        float invio = input.nextFloat();
+        denaro = denaro - invio;
+        return invio;
+    }
+
+    public void riceviDenaro(float invio){
+        denaro = denaro + invio;
+    }
+
+
+
 }
