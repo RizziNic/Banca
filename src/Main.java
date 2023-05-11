@@ -73,46 +73,6 @@ public class Main {
                             System.out.println(cliente.getDenaro());
                         }
 
-
-
-
-
-
-
-                        /*
-                        System.out.print("Chi invia il denaro: ");
-                        tastiera.nextLine();
-                        String mandante = tastiera.nextLine();
-
-                        System.out.print("Codice bancario del mandante: ");
-                        String codiceMandante = tastiera2.nextLine();
-
-                        System.out.print("Importo: ");
-                        double importo = tastiera.nextDouble();
-
-                        System.out.print("Destinatario: ");
-                        tastiera.nextLine();
-                        String destinatario = tastiera2.nextLine();
-
-                        System.out.print("Codice bancario del destinatario: ");
-                        String codiceDestinatario = tastiera.nextLine();
-
-                        Movimento movimentoInvio = new Movimento();
-
-
-                        int posmandante = tastiera.nextInt(); //posizione del mandante
-
-                        String mandante = banca.listaClienti.get(posmandante).codiceBancario; //codice bancario del mandante
-                        banca.listaClienti.get(posmandante).inviaDenaro(mandante); //chiamata del metodo inviaDenaro()
-
-                        System.out.println("A chi si invia il denaro");
-                        String ricevitore = tastiera.nextLine(); //codice bancario del ricevitore
-                        int posricevitore = tastiera.nextInt(); //posizione del ricevitore
-
-                        banca.listaClienti.get(posricevitore).riceviDenaro(banca.listaClienti.get(posmandante).inviaDenaro(mandante), ricevitore); //chiamata del metodo riceviDenaro()
-
-
-                         */
                         break;
 
                     case 5:
