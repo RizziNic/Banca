@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Banca banca = new Banca();
-        banca.listaClienti.add(new Cliente("A", "B", "6t47ugy", "c", 20));
-        banca.listaClienti.add(new Cliente("D", "E", "45ge", "f", 15));
-        banca.listaClienti.add(new Cliente("Augusto", "Ermione", "werfhy", "eesrh", 30));
+        banca.listaClienti.add(new Cliente("Anna", "B", "6t47ugy", "a", 20));
+        banca.listaClienti.add(new Cliente("Dario", "E", "45ge", "b", 15));
+        banca.listaClienti.add(new Cliente("Augusto", "Ermione", "werfhy", "c", 30));
 
         Scanner tastiera = new Scanner(System.in);
         Scanner tastiera2 = new Scanner(System.in);
@@ -57,20 +57,24 @@ public class Main {
                             if(mandante.equals(cliente.nome) && codiceMandante.equals(cliente.codiceBancario) && importo < cliente.denaro){
                                 trasferimento = true;
                                 cliente.inviaDenaro(importo);
-                                System.out.println("Soldi del mandante: " + cliente.getDenaro());
+                                System.out.println("Soldi del mandante: " + cliente.getDenaro() + " €");
                             }
                         }
                         if(trasferimento){
                             for (Cliente cliente: banca.listaClienti){
                                 if(destinatario.equals(cliente.nome) && codiceDestinatario.equals(cliente.codiceBancario)){
                                     cliente.riceviDenaro(importo);
-                                    System.out.println("Soldi del destinatario: " + cliente.getDenaro());
+                                    System.out.println("Soldi del destinatario: " + cliente.getDenaro() + " €");
                                 }
                             }
                         }
 
+                        if(!trasferimento){
+                            System.out.println("Il trasferimento non è possibile");
+                        }
+
                         for (Cliente cliente: banca.listaClienti){
-                            System.out.println(cliente.getDenaro());
+                            System.out.println(cliente.nome + " " + cliente.getDenaro() + " €");
                         }
 
                         break;
@@ -80,7 +84,7 @@ public class Main {
                         break;
                 }
 
-                System.out.println(banca.listaClienti);
+                //System.out.println(banca.listaClienti);
                 scelta = tastiera.nextInt();
             }
 
