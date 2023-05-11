@@ -38,5 +38,7 @@ public class Banca {
         listaClienti.remove(i);
     }
 
-
+    public ArrayList<Cliente> getListaClienti() {
+        return listaClienti;
+    }
 }
