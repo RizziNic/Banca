@@ -49,11 +49,12 @@ public class Main {
 
                         System.out.print("Codice bancario del destinatario: ");
                         String codiceDestinatario = tastiera.nextLine();
-                        Movimento movimento = new Movimento(mandante, codiceMandante, importo, destinatario,codiceDestinatario);
+
+                        Movimento movimento = new Movimento(mandante, codiceMandante, importo, destinatario, codiceDestinatario);
                         boolean trasferimento = false;
 
                         for (Cliente cliente: banca.listaClienti) {
-                            if(mandante.equals(cliente.nome) && codiceMandante.equals(cliente.codiceBancario) && importo > cliente.denaro){
+                            if(mandante.equals(cliente.nome) && codiceMandante.equals(cliente.codiceBancario) && importo < cliente.denaro){
                                 trasferimento = true;
                                 cliente.inviaDenaro(importo);
                                 System.out.println("Soldi del mandante: " + cliente.getDenaro());
