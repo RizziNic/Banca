@@ -48,28 +48,20 @@ public class Banca {
 
     void printBanca(){
 
-        System.out.printf("--------------------------------%n");
-        System.out.printf("     CLIENTI DELLA BANCA        %n");
-        System.out.printf("--------------------------------%n");
+        System.out.printf("----------------------------------------------------------------------------%n");
+        System.out.printf("|                           CLIENTI DELLA BANCA                            |%n");
+        System.out.printf("----------------------------------------------------------------------------%n");
 
-        System.out.printf("| %-10s | %-8s | %4s |%n", "NAME", "SUBNAME", "CODICE BANCARIO");
-        System.out.printf("--------------------------------%n");
-
-
-        /*
-        System.out.println("*********************************");
-        System.out.println("CLIENTI");
-        System.out.println("Pos  Nome  Cognome  CodiceBancario");
+        System.out.printf("| %-3s | %-20s | %-20s | %-20s |%n", "POS", "NAME", "SUBNAME", "CODICE BANCARIO");
+        System.out.printf("----------------------------------------------------------------------------%n");
 
         int i = 0;
         for (Cliente cliente: listaClienti) {
-            System.out.printf();
-            System.out.println(" " + i + ".  " + cliente.nome + "    " + cliente.cognome + "    " + cliente.codiceBancario);
+            System.out.printf("| %-3s | %-20s | %-20s | %-20s |%n",i, cliente.nome, cliente.cognome,  cliente.codiceBancario);
             i++;
         }
-        System.out.println("*********************************");
+        System.out.printf("----------------------------------------------------------------------------%n");
 
-         */
 
     }
 
