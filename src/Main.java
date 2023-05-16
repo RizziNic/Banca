@@ -18,7 +18,7 @@ public class Main {
             System.out.println("4 Ricevi Denaro");
             System.out.println("5 Esci");
 
-            //System.out.println(banca.listaClienti);
+
             System.out.print("Scelta: ");
             int scelta = tastiera.nextInt();
             while (scelta != 5) {
