@@ -82,6 +82,7 @@ public class Main {
                     case 4:
                         banca.printBanca();
                         System.out.print("Richiedente denaro: ");
+                        tastiera.nextLine();
                         String richiedente = tastiera.nextLine();
                         break;
                     case 5:
@@ -95,7 +96,7 @@ public class Main {
             }
 
         } catch (Exception e) {
-            System.out.println(e);
+            //System.out.println(e);
             System.out.println("Non ci sono più clienti");
             System.exit(0);
         }

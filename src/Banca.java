@@ -48,7 +48,7 @@ public class Banca {
 
     void printBanca(){
         System.out.printf("----------------------------------------------------------------------------------------------------------------%n");
-        System.out.printf("|                                             CLIENTI DELLA BANCA                                              |%n");
+        System.out.printf("|                                              CLIENTI DELLA BANCA                                             |%n");
         System.out.printf("----------------------------------------------------------------------------------------------------------------%n");
 
         System.out.printf("| %-3s | %-20s | %-20s | %-20s | %-20s | %-10s |%n", "POS", "NAME", "SUBNAME","CODICE FISCALE", "CODICE BANCARIO", "DENARO €");
