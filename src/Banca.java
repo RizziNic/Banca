@@ -34,8 +34,43 @@ public class Banca {
         listaClienti.add(new Cliente(nome, cognome, codiceFiscale, codiceBancario, denaro));
     }
 
-    void eliminacliente(int i){
+    void eliminacliente(int i/*String eliminatoNome, String eliminatoCognome, String eliminatocodiceBancario*/){
         listaClienti.remove(i);
+        /*
+        for (Cliente cliente: listaClienti) {
+            if(eliminatoNome.equals(cliente.nome) && eliminatoCognome.equals(cliente.cognome) && eliminatocodiceBancario.equals(cliente.codiceBancario)){
+                listaClienti.remove(cliente);
+            }
+        }
+
+         */
+    }
+
+    void printBanca(){
+
+        System.out.printf("--------------------------------%n");
+        System.out.printf("     CLIENTI DELLA BANCA        %n");
+        System.out.printf("--------------------------------%n");
+
+        System.out.printf("| %-10s | %-8s | %4s |%n", "NAME", "SUBNAME", "CODICE BANCARIO");
+        System.out.printf("--------------------------------%n");
+
+
+        /*
+        System.out.println("*********************************");
+        System.out.println("CLIENTI");
+        System.out.println("Pos  Nome  Cognome  CodiceBancario");
+
+        int i = 0;
+        for (Cliente cliente: listaClienti) {
+            System.out.printf();
+            System.out.println(" " + i + ".  " + cliente.nome + "    " + cliente.cognome + "    " + cliente.codiceBancario);
+            i++;
+        }
+        System.out.println("*********************************");
+
+         */
+
     }
 
     public ArrayList<Cliente> getListaClienti() {
