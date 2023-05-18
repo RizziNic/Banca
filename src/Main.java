@@ -9,19 +9,20 @@ public class Main {
 
         Scanner tastiera = new Scanner(System.in);
         Scanner tastiera2 = new Scanner(System.in);
-
+        int anno = 1980;
 
         try {
             System.out.println("1 Inserisci cliente");
             System.out.println("2 Elimina cliente");
             System.out.println("3 Invia Denaro");
-            System.out.println("4 Ricevi Denaro");
+            System.out.println("4 Mostra movimenti cliente");
             System.out.println("5 Esci");
 
 
             System.out.print("Scelta: ");
             int scelta = tastiera.nextInt();
             while (scelta != 5) {
+                anno++;
                 switch (scelta) {
                     case 1:
                         banca.printBanca();
@@ -53,7 +54,14 @@ public class Main {
                         System.out.print("Codice bancario del destinatario: ");
                         String codiceDestinatario = tastiera.nextLine();
 
-                        Movimento movimento = new Movimento(mandante, codiceMandante, importo, destinatario, codiceDestinatario);
+                        for (Cliente cliente: banca.listaClienti) {
+                            if(mandante.equals(cliente.nome) && codiceMandante.equals(cliente.codiceBancario)){
+                                Movimento movimento = new Movimento(mandante, codiceMandante, importo, destinatario, codiceDestinatario, anno);
+                                cliente.listamovimenti.add(movimento);
+                            }
+                        }
+
+                        //Movimento movimento = new Movimento(mandante, codiceMandante, importo, destinatario, codiceDestinatario);
                         boolean trasferimento = false;
 
                         for (Cliente cliente : banca.listaClienti) {
@@ -81,9 +89,22 @@ public class Main {
 
                     case 4:
                         banca.printBanca();
-                        System.out.print("Richiedente denaro: ");
+                        System.out.print("Nome cliente: ");
                         tastiera.nextLine();
-                        String richiedente = tastiera.nextLine();
+                        String clienteNome = tastiera.nextLine();
+
+                        System.out.print("Cognome cliente: ");
+                        String clienteCognome = tastiera.nextLine();
+
+                        System.out.print("Codice bancario cliente: ");
+                        String clienteCodiceBancario = tastiera.nextLine();
+
+                        for (Cliente cliente: banca.listaClienti) {
+                            if(clienteNome.equals(cliente.nome) && clienteCognome.equals(cliente.cognome) && clienteCodiceBancario.equals(cliente.codiceBancario)){
+                                cliente.printMovimenti(clienteNome, clienteCognome, anno);
+                            }
+                        }
+
                         break;
                     case 5:
                         System.exit(0);
