@@ -34,16 +34,14 @@ public class Banca {
         listaClienti.add(new Cliente(nome, cognome, codiceFiscale, codiceBancario, denaro));
     }
 
-    void eliminacliente(int i/*String eliminatoNome, String eliminatoCognome, String eliminatocodiceBancario*/){
-        listaClienti.remove(i);
-        /*
+    void eliminacliente(String eliminatoNome, String eliminatoCognome, String eliminatocodiceBancario){
         for (Cliente cliente: listaClienti) {
             if(eliminatoNome.equals(cliente.nome) && eliminatoCognome.equals(cliente.cognome) && eliminatocodiceBancario.equals(cliente.codiceBancario)){
                 listaClienti.remove(cliente);
             }
         }
 
-         */
+
     }
 
     void printBanca(){

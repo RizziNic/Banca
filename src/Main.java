@@ -31,9 +31,18 @@ public class Main {
 
                     case 2:
                         banca.printBanca();
-                        System.out.print("Posizione dell'utente da eliminare: ");
-                        int i = tastiera.nextInt();
-                        banca.eliminacliente(i);
+                        System.out.print("Nome dell'utente da eliminare: ");
+                        tastiera.nextLine();
+                        String clienteEliminato = tastiera.nextLine();
+
+                        System.out.print("Cognome: ");
+                        String eliminatoCognome = tastiera.nextLine();
+
+                        System.out.print("Codice bancario: ");
+                        String eliminatocodiceBancario = tastiera.nextLine();
+
+                        banca.eliminacliente(clienteEliminato, eliminatoCognome, eliminatocodiceBancario);
+
                         break;
                     case 3:
                         banca.printBanca();
@@ -56,6 +65,10 @@ public class Main {
 
                         for (Cliente cliente: banca.listaClienti) {
                             if(mandante.equals(cliente.nome) && codiceMandante.equals(cliente.codiceBancario)){
+                                Movimento movimento = new Movimento(mandante, codiceMandante, importo, destinatario, codiceDestinatario, anno);
+                                cliente.listamovimenti.add(movimento);
+                            }
+                            else if(destinatario.equals(cliente.nome) && codiceDestinatario.equals(cliente.codiceBancario)){
                                 Movimento movimento = new Movimento(mandante, codiceMandante, importo, destinatario, codiceDestinatario, anno);
                                 cliente.listamovimenti.add(movimento);
                             }
@@ -112,6 +125,12 @@ public class Main {
                 }
 
                 //System.out.println(banca.listaClienti);
+                System.out.println("\n" + "\n" + "\n");
+                System.out.println("1 Inserisci cliente");
+                System.out.println("2 Elimina cliente");
+                System.out.println("3 Invia Denaro");
+                System.out.println("4 Mostra movimenti cliente");
+                System.out.println("5 Esci");
                 System.out.print("Scelta: ");
                 scelta = tastiera.nextInt();
             }
