@@ -7,11 +7,29 @@ public class Main {
         banca.listaClienti.add(new Cliente("Dario", "Rossi", "45ge", "bde", 15));
         banca.listaClienti.add(new Cliente("Augusto", "Ermione", "werfhy", "cef", 30));
 
+        Credenziali credenziali = new Credenziali("rizzijunior.nico@gmail.com", "nico", "123");
+        //credenziali.listaCredenziali.add()
+
         Scanner tastiera = new Scanner(System.in);
         Scanner tastiera2 = new Scanner(System.in);
         int anno = 1980;
 
         try {
+            System.out.print("E-mail: ");
+            tastiera.nextLine();
+            String mail = tastiera.nextLine();
+
+            System.out.print("Password: ");
+            String password = tastiera.nextLine();
+
+            for (Credenziali credenziali1: credenziali.listaCredenziali) {
+                if(mail.equals(credenziali.listaCredenziali)){
+
+                }
+
+            }
+
+
             System.out.println("1 Inserisci cliente");
             System.out.println("2 Elimina cliente");
             System.out.println("3 Invia Denaro");
