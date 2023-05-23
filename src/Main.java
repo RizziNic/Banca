@@ -7,27 +7,67 @@ public class Main {
         banca.listaClienti.add(new Cliente("Dario", "Rossi", "45ge", "bde", 15));
         banca.listaClienti.add(new Cliente("Augusto", "Ermione", "werfhy", "cef", 30));
 
-        Credenziali credenziali = new Credenziali("rizzijunior.nico@gmail.com", "nico", "123");
-        //credenziali.listaCredenziali.add()
+        //Credenziali credenziali = new Credenziali("rizzijunior.nico@gmail.com", "nico", "123");
+        banca.listaCredenziali.add(new Credenziali("rizzijunior.nico@gmail.com", "nico", "123"));
+        banca.listaCredenziali.add(new Credenziali("bella", "nico", "123"));
+
 
         Scanner tastiera = new Scanner(System.in);
         Scanner tastiera2 = new Scanner(System.in);
         int anno = 1980;
 
         try {
-            System.out.print("E-mail: ");
-            tastiera.nextLine();
-            String mail = tastiera.nextLine();
+            try{
+                System.out.print("E-mail: ");
+                //tastiera.nextLine();
+                String mailInserita = tastiera.nextLine();
 
-            System.out.print("Password: ");
-            String password = tastiera.nextLine();
+                System.out.print("Password: ");
+                String passwordInserita = tastiera.nextLine();
 
-            for (Credenziali credenziali1: credenziali.listaCredenziali) {
-                if(mail.equals(credenziali.listaCredenziali)){
+                System.out.print("OTP: ");
+                String otpInserita = tastiera.nextLine();
+                boolean verifica = false;
 
+                for (Credenziali credenziali : banca.listaCredenziali) {
+                    if(mailInserita.equals(credenziali.mail) && passwordInserita.equals(credenziali.password) && otpInserita.equals(credenziali.otp)){
+                        verifica = true;
+                    }
                 }
 
+                if(!verifica){
+                    throw new RuntimeException();
+                }
+            } catch (RuntimeException e){
+                System.out.println("Email, password o OTP non corretti --- RIPROVA");
+                System.out.println();
+                try{
+                    System.out.print("E-mail: ");
+                    //tastiera.nextLine();
+                    String mailInserita = tastiera.nextLine();
+
+                    System.out.print("Password: ");
+                    String passwordInserita = tastiera.nextLine();
+
+                    System.out.print("OTP: ");
+                    String otpInserita = tastiera.nextLine();
+                    boolean verifica = false;
+                    for (Credenziali credenziali : banca.listaCredenziali) {
+                        if(mailInserita.equals(credenziali.mail) && passwordInserita.equals(credenziali.password) && otpInserita.equals(credenziali.otp)){
+                            verifica = true;
+                        }
+                    }
+
+                    if(!verifica){
+                        throw new RuntimeException();
+                    }
+                }
+                catch (RuntimeException e1){
+                    System.out.println("Email, password o OTP non corretti --- Troppi tentativi --- USCITA");
+                    System.exit(0);
+                }
             }
+
 
 
             System.out.println("1 Inserisci cliente");

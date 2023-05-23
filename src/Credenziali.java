@@ -7,9 +7,9 @@ public class Credenziali {
     String password;
     String otp;
 
-    ArrayList<Credenziali> listaCredenziali = new ArrayList<>();
 
-    public Credenziali(String mail, String password, String opt){
+
+    public Credenziali(String mail, String password, String otp){
         this.mail = mail;
         this.password = password;
         this.otp = otp;

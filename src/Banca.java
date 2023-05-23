@@ -12,6 +12,7 @@ public class Banca {
         this.nclienti = nclienti;
     }
     ArrayList<Cliente> listaClienti = new ArrayList<>();
+    ArrayList<Credenziali> listaCredenziali = new ArrayList<>();
 
     void inserisciCliente(){
         Scanner tastiera = new Scanner(System.in);
